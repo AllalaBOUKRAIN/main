@@ -28,7 +28,9 @@ public class ProviderController {
 	@GetMapping("list")
 	public String listProviders(Model model) {
 
-		model.addAttribute("providers", providerRepository.findAll());
+		//model.addAttribute("providers", providerRepository.findAll());
+		model.addAttribute("providers", providerRepository.findProvidersByAddress("USA"));
+		
 
 		return "provider/listProviders";
 
